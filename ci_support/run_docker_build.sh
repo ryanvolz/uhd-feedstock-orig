@@ -63,7 +63,7 @@ source run_conda_forge_build_setup
 # "recipe/yum_requirements.txt" file. After updating that file,
 # run "conda smithy rerender" and this line be updated
 # automatically.
-/usr/bin/sudo -n yum install -y gpsd-devel libusb-devel udev
+/usr/bin/sudo -n yum install -y gpsd-devel libudev-devel libusb1-devel
 
 
 # Embarking on 2 case(s).

@@ -63,21 +63,12 @@ source run_conda_forge_build_setup
 # "recipe/yum_requirements.txt" file. After updating that file,
 # run "conda smithy rerender" and this line be updated
 # automatically.
-/usr/bin/sudo -n yum install -y gpsd-devel libudev-devel libusb1-devel
+/usr/bin/sudo -n yum install -y gpsd-devel libudev-devel
 
 
-# Embarking on 2 case(s).
-    set -x
-    export CONDA_PY=27
-    set +x
+# Embarking on 1 case(s).
     conda build /recipe_root --quiet || exit 1
-    upload_or_check_non_existence /recipe_root ryanvolz --channel=uhd || exit 1
-
-    set -x
-    export CONDA_PY=35
-    set +x
-    conda build /recipe_root --quiet || exit 1
-    upload_or_check_non_existence /recipe_root ryanvolz --channel=uhd || exit 1
+    upload_or_check_non_existence /recipe_root ryanvolz --channel=main || exit 1
 touch /feedstock_root/build_artefacts/conda-forge-build-done
 EOF
 

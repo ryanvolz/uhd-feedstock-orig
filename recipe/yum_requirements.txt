@@ -1,3 +1,2 @@
 gpsd-devel
 libudev-devel
-libusb1-devel

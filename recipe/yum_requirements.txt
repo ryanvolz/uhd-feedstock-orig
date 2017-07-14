@@ -1,2 +1,0 @@
-gpsd-devel
-libudev-devel

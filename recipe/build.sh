@@ -10,7 +10,8 @@ cd build
 cmake ../ \
     -DBOOST_ROOT=$PREFIX \
     -DCMAKE_PREFIX_PATH=$PREFIX \
-    -DCMAKE_INSTALL_PREFIX=$PREFIX
+    -DCMAKE_INSTALL_PREFIX=$PREFIX \
+    -DLIB_SUFFIX=""
 make
 make test
 make install

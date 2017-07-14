@@ -1,13 +1,15 @@
+{% set version = "3.10.1.1" %}
+
 package:
   name: uhd
-  version: 3.10.1.0
+  version: {{ version }}
 
 source:
-  git_url: https://github.com/EttusResearch/uhd.git
-  git_rev: release_003_010_001_000
+  url: http://files.ettus.com/binaries/uhd/src/uhd-{{ version }}.tar.gz
+  sha256: b0c9b1c4e6691f61e13805b74c56d3261ee98c528e96a0992e169fdc24309178
 
 build:
-  number: 2
+  number: 0
   skip: True  # [win]
   detect_binary_files_with_prefix: True
 
@@ -16,14 +18,14 @@ requirements:
     - toolchain
     - pkg-config
     - cmake >=2.8
-    - boost 1.62.*
+    - boost 1.64.*
     - python >=2.7
     - mako >=0.5.0
     - libusb >=1
     - doxygen
 
   run:
-    - boost 1.62.*
+    - boost 1.64.*
     - python >=2.7
     - requests
 

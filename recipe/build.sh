@@ -11,6 +11,6 @@ cmake ../ \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DLIB_SUFFIX=""
-make -j4
+make -j${CPU_COUNT}
 make test
 make install

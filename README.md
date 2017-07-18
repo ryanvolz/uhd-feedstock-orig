@@ -18,8 +18,8 @@ including all motherboards and daughterboards, and the combinations thereof.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/uhd-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/uhd-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/uhd-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/uhd-feedstock)
+Linux: [![Circle CI](https://circleci.com/gh/ryanvolz/uhd-feedstock.svg?style=shield)](https://circleci.com/gh/ryanvolz/uhd-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/ryanvolz/uhd-feedstock.svg?branch=master)](https://travis-ci.org/ryanvolz/uhd-feedstock)
 Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
 
 Current release info

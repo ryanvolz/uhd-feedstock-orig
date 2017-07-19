@@ -22,12 +22,42 @@ requirements:
     - python >=2.7
     - mako >=0.5.0
     - libusb >=1
-    - doxygen
 
   run:
     - boost 1.64.*
     - python >=2.7
     - requests
+
+test:
+  commands:
+    # verify CLI tools
+    {% set uhd_cmds = [
+        "octoclock_firmware_burner",
+        "uhd_cal_rx_iq_balance",
+        "uhd_cal_tx_dc_offset",
+        "uhd_cal_tx_iq_balance",
+        "uhd_config_info",
+        "uhd_find_devices",
+        "uhd_image_loader",
+        "uhd_images_downloader",
+        "uhd_usrp_probe",
+        "usrp2_card_burner",
+        "usrp_n2xx_simple_net_burner",
+        "usrp_x3xx_fpga_burner",
+    ] %}
+    {% for each_cmd in uhd_cmds %}
+    - command -v {{ each_cmd }}  # [unix]
+    {% endfor %}
+
+    # verify libraries
+    {% set uhd_libs = [
+        "uhd",
+    ] %}
+    {% for each_lib in uhd_libs %}
+    - test -f $PREFIX/lib/lib{{ each_lib }}.dylib  # [osx]
+    - otool -L $PREFIX/lib/lib{{ each_lib }}.dylib  # [osx]
+    - test -f $PREFIX/lib/lib{{ each_lib }}.so  # [linux]
+    {% endfor %}
 
 about:
   home: http://github.com/EttusResearch/uhd

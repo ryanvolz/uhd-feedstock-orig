@@ -11,7 +11,7 @@ cd build
 #   DOXYGEN/MANUAL because we don't need docs in the conda package
 #   E100/E300 are for embedded devices and are disable by default
 #   GPSD needs gpsd
-cmake ../ \
+cmake \
     -DBOOST_ROOT=$PREFIX \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
@@ -34,7 +34,8 @@ cmake ../ \
     -DENABLE_USB=ON \
     -DENABLE_USRP1=ON \
     -DENABLE_USRP2=ON \
-    -DENABLE_X300=ON
+    -DENABLE_X300=ON \
+    ..
 make -j${CPU_COUNT}
 make test
 make install

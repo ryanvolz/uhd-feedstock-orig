@@ -34,7 +34,7 @@ cmake ../ \
     -DENABLE_USB=ON \
     -DENABLE_USRP1=ON \
     -DENABLE_USRP2=ON \
-    -DENABLE_X300=ON \
+    -DENABLE_X300=ON
 make -j${CPU_COUNT}
 make test
 make install

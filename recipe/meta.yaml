@@ -50,14 +50,10 @@ test:
     {% endfor %}
 
     # verify libraries
-    {% set uhd_libs = [
-        "uhd",
-    ] %}
-    {% for each_lib in uhd_libs %}
-    - test -f $PREFIX/lib/lib{{ each_lib }}.dylib  # [osx]
-    - otool -L $PREFIX/lib/lib{{ each_lib }}.dylib  # [osx]
-    - test -f $PREFIX/lib/lib{{ each_lib }}.so  # [linux]
-    {% endfor %}
+    {% set uhd_lib = "libuhd" %}
+    - test -f $PREFIX/lib/{{ uhd_lib }}.dylib  # [osx]
+    - otool -L $PREFIX/lib/{{ uhd_lib }}.dylib  # [osx]
+    - test -f $PREFIX/lib/{{ uhd_lib }}.so  # [linux]
 
 about:
   home: http://github.com/EttusResearch/uhd

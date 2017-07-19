@@ -40,9 +40,7 @@ test:
         "uhd_config_info",
         "uhd_find_devices",
         "uhd_image_loader",
-        "uhd_images_downloader",
         "uhd_usrp_probe",
-        "usrp2_card_burner",
         "usrp_n2xx_simple_net_burner",
         "usrp_x3xx_fpga_burner",
     ] %}

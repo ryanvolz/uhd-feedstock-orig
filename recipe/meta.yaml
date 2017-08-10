@@ -1,15 +1,17 @@
-{% set version = "3.10.1.1" %}
+{% set version = "3.10.2.0" %}
+{% set padded_version = "003.010.002.000" %}
+{% set sha256 = "dbb2bc42132212c59673c50a14718ad4a9c3d90cb035e836fdf08bf6fe95e33a" %}
 
 package:
   name: uhd
   version: {{ version }}
 
 source:
-  url: http://files.ettus.com/binaries/uhd/src/uhd-{{ version }}.tar.gz
-  sha256: b0c9b1c4e6691f61e13805b74c56d3261ee98c528e96a0992e169fdc24309178
+  url: http://files.ettus.com/binaries/uhd/uhd_{{ padded_version }}-release/uhd-{{ version }}-release.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win]
   detect_binary_files_with_prefix: True
 

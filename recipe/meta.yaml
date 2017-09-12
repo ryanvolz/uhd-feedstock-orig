@@ -17,18 +17,20 @@ build:
 
 requirements:
   build:
-    - toolchain
-    - pkg-config
-    - cmake >=2.8
     - boost 1.64.*
-    - python >=2.7
-    - mako >=0.5.0
+    - cmake >=2.8
     - libusb >=1
+    - mako >=0.5.0
+    - pkg-config
+    # need python >=2.7, but result is no different with any valid python
+    # specify one version to get single build
+    - python {{ PY_VER }}*
+    - toolchain
 
   run:
     - boost 1.64.*
-    - python >=2.7
     - libusb >=1
+    - python >=2.7
     - requests
 
 test:

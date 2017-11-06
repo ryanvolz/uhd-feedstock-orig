@@ -1,6 +1,8 @@
 {% set version = "3.10.2.0" %}
 {% set padded_version = "003.010.002.000" %}
 {% set sha256 = "dbb2bc42132212c59673c50a14718ad4a9c3d90cb035e836fdf08bf6fe95e33a" %}
+{% set build_number = "0" %}
+
 
 package:
   name: uhd
@@ -11,7 +13,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: {{ build_number }}
   skip: True  # [win]
   detect_binary_files_with_prefix: True
 

@@ -9,9 +9,12 @@ package:
 source:
   url: https://github.com/EttusResearch/uhd/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - usrp2-include-DSP-bit-gain.patch
 
 build:
   number: {{ build_number }}
+  string: bitgain_{{ build_number }}
   skip: True  # [not py36] to avoid building pointlessly against multiple python
   run_exports:
     - {{ pin_subpackage('uhd', min_pin='x.x.x', max_pin='x.x.x') }}

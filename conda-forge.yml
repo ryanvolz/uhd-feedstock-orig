@@ -4,7 +4,7 @@ channels:
   - ryanvolz
   - defaults
   targets:
-  - [ryanvolz, main]
+  - [ryanvolz, bitgain]
 github:
   user_or_org:
     ryanvolz

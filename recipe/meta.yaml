@@ -1,36 +1,34 @@
-{% set version = "3.10.2.0" %}
-{% set padded_version = "003.010.002.000" %}
-{% set sha256 = "dbb2bc42132212c59673c50a14718ad4a9c3d90cb035e836fdf08bf6fe95e33a" %}
-{% set build_number = "0" %}
-
+{% set version = "3.11.0.1" %}
+{% set sha256 = "b8b0aa9ca347353333c2d6f52193a01b6c7dbcdaf5e21250c00210d3f8b0fabd" %}
 
 package:
   name: uhd
   version: {{ version }}
 
 source:
-  url: http://files.ettus.com/binaries/uhd/uhd_{{ padded_version }}-release/uhd-{{ version }}-release.tar.gz
+  url: https://github.com/EttusResearch/uhd/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: {{ build_number }}
+  number: 0
   skip: True  # [win]
   detect_binary_files_with_prefix: True
 
 requirements:
   build:
-    - boost 1.64.*
+    - boost 1.66.0
     - cmake >=2.8
     - libusb >=1
     - mako >=0.5.0
-    - pkg-config
+    - pkg-config  # [not win]
     # need python >=2.7, but result is no different with any valid python
     # specify one version to get single build
     - python {{ PY_VER }}*
+    - requests
     - toolchain
 
   run:
-    - boost 1.64.*
+    - boost 1.66.0
     - libusb >=1
     - python >=2.7
     - requests
@@ -52,18 +50,19 @@ test:
     ] %}
     {% for each_cmd in uhd_cmds %}
     - command -v {{ each_cmd }}  # [unix]
+    - where {{ each_cmd }}  # [win]
     {% endfor %}
 
     # verify libraries
-    {% set uhd_lib = "libuhd" %}
-    - test -f $PREFIX/lib/{{ uhd_lib }}.dylib  # [osx]
-    - otool -L $PREFIX/lib/{{ uhd_lib }}.dylib  # [osx]
-    - test -f $PREFIX/lib/{{ uhd_lib }}.so  # [linux]
+    {% set uhd_lib = "uhd" %}
+    - test -f $PREFIX/lib/lib{{ uhd_lib }}${SHLIB_EXT}  # [unix]
+    - conda inspect linkages -p $PREFIX uhd  # [not win]
+    - conda inspect objects -p $PREFIX uhd  # [osx]
 
 about:
   home: http://github.com/EttusResearch/uhd
   license: GPL-3.0
-  license_file: LICENSE
+  license_file: host/LICENSE
   summary: 'Software driver and API for the Ettus Research USRP SDR platform'
   description: |
     UHD is the free & open-source software driver and API for the Universal

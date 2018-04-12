@@ -11,8 +11,12 @@ source:
 
 build:
   number: 0
-  skip: True  # [win or osx]
+  skip: True  # [osx]
   detect_binary_files_with_prefix: True
+  features:
+    - vc9  # [win and py27]
+    - vc10  # [win and py34]
+    - vc14  # [win and py>=35]
 
 requirements:
   build:
@@ -26,12 +30,18 @@ requirements:
     - python {{ PY_VER }}*
     - requests
     - toolchain
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
 
   run:
     - boost 1.66.0
     - libusb >=1
     - python >=2.7
     - requests
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
 
 test:
   commands:

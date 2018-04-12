@@ -7,7 +7,7 @@ CXXFLAGS="${CXXFLAGS} -D_GLIBCXX_USE_CXX11_ABI=0"
 cd host
 mkdir build
 cd build
-# enable gnuradio components explicitly so we get build error when unsatisfied
+# enable uhd components explicitly so we get build error when unsatisfied
 # the following are disabled:
 #   DOXYGEN/MANUAL because we don't need docs in the conda package
 #   E100/E300 are for embedded devices and are disable by default
@@ -24,9 +24,11 @@ cmake \
     -DENABLE_E300=OFF \
     -DENABLE_EXAMPLES=ON \
     -DENABLE_GPSD=OFF \
+    -DENABLE_LIBERIO=OFF \
     -DENABLE_LIBUHD=ON \
     -DENABLE_MAN_PAGES=ON \
     -DENABLE_MANUAL=OFF \
+    -DENABLE_MPMD=ON \
     -DENABLE_OCTOCLOCK=ON \
     -DENABLE_N230=ON \
     -DENABLE_TESTS=ON \

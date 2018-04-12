@@ -1,6 +1,7 @@
 setlocal EnableDelayedExpansion
 
 :: Make a build folder and change to it
+cd host
 mkdir build
 cd build
 

@@ -11,10 +11,10 @@ source:
 
 build:
   number: 0
-  skip: True  # [(win and py2k) or osx]
+  skip: True  # [osx]
   detect_binary_files_with_prefix: True
   features:
-    - vc14  # [win and py>=35]
+    - vc14  # [win]
 
 requirements:
   build:
@@ -23,21 +23,19 @@ requirements:
     - libusb >=1
     - mako >=0.5.0
     - pkg-config  # [not win]
-    # need python >=2.7, but result is no different with any valid python
-    # specify one version to get single build
-    - python {{ PY_VER }}*  # [not win]
-    - python  # [win]
+    # need any single python >=2.7 to build, but windows needs either 3.5 or
+    # 3.6 to activate the vc14 feature
+    - python 3.6*
     - requests
     - toolchain
-    - vc 14  # [win and py>=35]
+    - vc 14  # [win]
 
   run:
     - boost 1.66.0
     - libusb >=1
-    - python >=2.7  # [not win]
-    - python  # [win]
+    - python >=2.7
     - requests
-    - vc 14  # [win and py>=35]
+    - vc 14  # [win]
 
 test:
   commands:

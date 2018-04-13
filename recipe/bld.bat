@@ -11,13 +11,14 @@ cd build
 ::   DOXYGEN/MANUAL because we don't need docs in the conda package
 ::   E100/E300 are for embedded devices and are disable by default
 ::   GPSD needs gpsd
+::   MAN_PAGES because they can't be enabled for Windows
 cmake -G "NMake Makefiles" ^
     -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
     -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
     -DPYTHON_EXECUTABLE:PATH="%PYTHON%" ^
     -DCMAKE_BUILD_TYPE:STRING=Release ^
-    -DLIBUSB_INCLUDE_DIRS:PATH="%LIBRARY_INCLUDE%"\\libusb-1.0 ^
-    -DLIBUSB_LIBRARIES:PATH="%LIBRARY_LIB%"\\libusb-1.0.lib ^
+    -DLIBUSB_INCLUDE_DIRS:PATH="%LIBRARY_INC%"\libusb-1.0 ^
+    -DLIBUSB_LIBRARIES:PATH="%LIBRARY_LIB%"\libusb-1.0.lib ^
     -DENABLE_B100=ON ^
     -DENABLE_B200=ON ^
     -DENABLE_C_API=ON ^
@@ -27,7 +28,7 @@ cmake -G "NMake Makefiles" ^
     -DENABLE_GPSD=OFF ^
     -DENABLE_LIBERIO=OFF ^
     -DENABLE_LIBUHD=ON ^
-    -DENABLE_MAN_PAGES=ON ^
+    -DENABLE_MAN_PAGES=OFF ^
     -DENABLE_MANUAL=OFF ^
     -DENABLE_MPMD=ON ^
     -DENABLE_OCTOCLOCK=ON ^

@@ -25,7 +25,8 @@ requirements:
     - pkg-config  # [not win]
     # need any single python >=2.7 to build, but windows needs either 3.5 or
     # 3.6 to activate the vc14 feature
-    - python 3.6*
+    - python {{ PY_VER }}*  # [not win]
+    - python >=3.5  # [win]
     - requests
     - toolchain
     - vc 14  # [win]

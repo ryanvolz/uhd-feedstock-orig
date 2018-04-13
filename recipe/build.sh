@@ -39,5 +39,5 @@ cmake \
     -DENABLE_X300=ON \
     ..
 make -j${CPU_COUNT}
-make test
+ctest --output-on-failure
 make install

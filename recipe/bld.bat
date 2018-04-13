@@ -47,7 +47,7 @@ cmake --build . --config Release
 if errorlevel 1 exit 1
 
 :: test
-cmake --build . --config Release --target test
+ctest --output-on-failure
 if errorlevel 1 exit 1
 
 :: install

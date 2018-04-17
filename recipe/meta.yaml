@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [osx]
+  skip: True  # [osx or (win and py35)]
   detect_binary_files_with_prefix: True
   features:
     - vc14  # [win]

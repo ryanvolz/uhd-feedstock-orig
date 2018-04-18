@@ -12,7 +12,7 @@ cd build
 ::   E100/E300 are for embedded devices and are disable by default
 ::   GPSD needs gpsd
 ::   MAN_PAGES because they can't be enabled for Windows
-cmake -G "NMake Makefiles" ^
+cmake -G "NMake Makefiles JOM" ^
     -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
     -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
     -DCMAKE_BUILD_TYPE:STRING=Release ^
@@ -44,7 +44,7 @@ cmake -G "NMake Makefiles" ^
 if errorlevel 1 exit 1
 
 :: build
-cmake --build .
+cmake --build . -- -j%CPU_COUNT%
 if errorlevel 1 exit 1
 
 :: test

@@ -20,6 +20,7 @@ requirements:
   build:
     - boost 1.66.0
     - cmake >=2.8
+    - jom  # [win]
     - libusb >=1
     - mako >=0.5.0
     - pkg-config  # [not win]

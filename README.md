@@ -18,14 +18,16 @@ including all motherboards and daughterboards, and the combinations thereof.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/ryanvolz/uhd-feedstock.svg?style=shield)](https://circleci.com/gh/ryanvolz/uhd-feedstock)
-OSX: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/ryanvolz/uhd-feedstock?svg=True)](https://ci.appveyor.com/project/ryanvolz/uhd-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/ryanvolz/uhd-feedstock/master.svg?label=Linux)](https://circleci.com/gh/ryanvolz/uhd-feedstock)
+[![OSX](https://img.shields.io/travis/ryanvolz/uhd-feedstock/master.svg?label=macOS)](https://travis-ci.org/ryanvolz/uhd-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/ryanvolz/uhd-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/ryanvolz/uhd-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/ryanvolz/uhd/badges/version.svg)](https://anaconda.org/ryanvolz/uhd)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/ryanvolz/uhd/badges/downloads.svg)](https://anaconda.org/ryanvolz/uhd)
+[![Conda Recipe](https://img.shields.io/badge/recipe-uhd-green.svg)](https://anaconda.org/ryanvolz/uhd)
+[![Conda Downloads](https://img.shields.io/conda/dn/ryanvolz/uhd.svg)](https://anaconda.org/ryanvolz/uhd)
+[![Conda Version](https://img.shields.io/conda/vn/ryanvolz/uhd.svg)](https://anaconda.org/ryanvolz/uhd)
+[![Conda Platforms](https://img.shields.io/conda/pn/ryanvolz/uhd.svg)](https://anaconda.org/ryanvolz/uhd)
 
 Installing uhd
 ==============

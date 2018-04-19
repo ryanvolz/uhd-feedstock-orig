@@ -10,34 +10,34 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  skip: True  # [osx or (win and py35)]
-  detect_binary_files_with_prefix: True
-  features:
-    - vc14  # [win]
+  number: 1
+  skip: True  # [not py36] to avoid building pointlessly against multiple python
+  run_exports:
+    - {{ pin_subpackage('uhd', min_pin='x.x.x', max_pin='x.x.x') }}
 
 requirements:
   build:
-    - boost 1.66.0
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - cmake >=2.8
     - jom  # [win]
+
+  host:
+    - boost
     - libusb >=1
     - mako >=0.5.0
     - pkg-config  # [not win]
-    # need any single python >=2.7 to build, but windows needs either 3.5 or
-    # 3.6 to activate the vc14 feature
-    - python {{ PY_VER }}*  # [not win]
-    - python >=3.5  # [win]
+    # python >=2.7 is required, but requests pulls it in and leaving it out
+    # means no automatic pinning (can be different version at runtime)
+    #- python
     - requests
-    - toolchain
-    - vc 14  # [win]
 
   run:
-    - boost 1.66.0
-    - libusb >=1
-    - python >=2.7
+    - {{ pin_compatible('boost', max_pin='x.x.x') }}  # needed until boost package has run_exports
+    # python >=2.7 is required, but requests pulls it in and leaving it out
+    # means no automatic pinning (can be different version from build)
+    #- python
     - requests
-    - vc 14  # [win]
 
 test:
   commands:

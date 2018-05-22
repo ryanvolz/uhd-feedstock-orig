@@ -1,5 +1,6 @@
 {% set version = "3.11.1.0" %}
 {% set sha256 = "9c6347584e778c5dcdd2dceb296b3e39f3374e38565c1133a88a68a7cac1ec41" %}
+{% set build_number = "1" %}  # use for ease of rebasing other branches
 
 package:
   name: uhd
@@ -10,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: {{ build_number }}
   skip: True  # [not py36] to avoid building pointlessly against multiple python
   run_exports:
     - {{ pin_subpackage('uhd', min_pin='x.x.x', max_pin='x.x.x') }}
@@ -28,9 +29,7 @@ requirements:
     - libusb >=1
     - mako >=0.5.0
     - pkg-config  # [not win]
-    # python >=2.7 is required, but requests pulls it in and leaving it out
-    # means no automatic pinning (can be different version at runtime)
-    #- python
+    - python
     - requests
 
   run:

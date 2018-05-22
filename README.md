@@ -24,10 +24,10 @@ Current build status
 
 Current release info
 ====================
-[![Conda Recipe](https://img.shields.io/badge/recipe-uhd-green.svg)](https://anaconda.org/ryanvolz/uhd)
-[![Conda Downloads](https://img.shields.io/conda/dn/ryanvolz/uhd.svg)](https://anaconda.org/ryanvolz/uhd)
-[![Conda Version](https://img.shields.io/conda/vn/ryanvolz/uhd.svg)](https://anaconda.org/ryanvolz/uhd)
-[![Conda Platforms](https://img.shields.io/conda/pn/ryanvolz/uhd.svg)](https://anaconda.org/ryanvolz/uhd)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-uhd-green.svg)](https://anaconda.org/ryanvolz/uhd) | [![Conda Downloads](https://img.shields.io/conda/dn/ryanvolz/uhd.svg)](https://anaconda.org/ryanvolz/uhd) | [![Conda Version](https://img.shields.io/conda/vn/ryanvolz/uhd.svg)](https://anaconda.org/ryanvolz/uhd) | [![Conda Platforms](https://img.shields.io/conda/pn/ryanvolz/uhd.svg)](https://anaconda.org/ryanvolz/uhd) |
 
 Installing uhd
 ==============

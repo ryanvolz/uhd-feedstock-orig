@@ -1,9 +1,11 @@
 boost:
 - 1.66.0
+boost_cpp:
+- 1.66.0
 c_compiler:
-- gcc
+- toolchain_c
 cxx_compiler:
-- gxx
+- toolchain_cxx
 pin_run_as_build:
   python:
     max_pin: x.x

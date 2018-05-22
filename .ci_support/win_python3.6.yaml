@@ -1,5 +1,7 @@
 boost:
 - 1.66.0
+boost_cpp:
+- 1.66.0
 c_compiler:
 - vs2015
 cxx_compiler:

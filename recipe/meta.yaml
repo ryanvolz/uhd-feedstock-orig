@@ -1,5 +1,5 @@
-{% set version = "3.11.0.1" %}
-{% set sha256 = "b8b0aa9ca347353333c2d6f52193a01b6c7dbcdaf5e21250c00210d3f8b0fabd" %}
+{% set version = "3.11.1.0" %}
+{% set sha256 = "9c6347584e778c5dcdd2dceb296b3e39f3374e38565c1133a88a68a7cac1ec41" %}
 
 package:
   name: uhd
@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   skip: True  # [not py36] to avoid building pointlessly against multiple python
   run_exports:
     - {{ pin_subpackage('uhd', min_pin='x.x.x', max_pin='x.x.x') }}

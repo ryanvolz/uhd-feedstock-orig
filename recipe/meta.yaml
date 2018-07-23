@@ -1,13 +1,15 @@
-{% set version = "3.11.1.0" %}
-{% set sha256 = "9c6347584e778c5dcdd2dceb296b3e39f3374e38565c1133a88a68a7cac1ec41" %}
-{% set build_number = "1" %}  # use for ease of rebasing other branches
+{% set version = "3.12.0.0" %}
+{% set padded_version = "003.012.000.000" %}
+{% set sha256 = "e7fad69aeaf95b6aa9d2d6bc4b8e0495846d9446307368311b82e02759247e2f" %}
+{% set build_number = "0" %}  # use for ease of rebasing other branches
 
 package:
   name: uhd
   version: {{ version }}
 
 source:
-  url: https://github.com/EttusResearch/uhd/archive/v{{ version }}.tar.gz
+  url: http://files.ettus.com/binaries/uhd/uhd_{{ padded_version }}-release/uhd_{{ version }}-release.tar.gz
+#  url: https://github.com/EttusResearch/uhd/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:

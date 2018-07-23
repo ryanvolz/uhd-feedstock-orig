@@ -3,7 +3,7 @@
 # make builds with gcc>=5 compatible with conda-forge, currently using gcc<5
 CXXFLAGS="${CXXFLAGS} -D_GLIBCXX_USE_CXX11_ABI=0"
 
-cd host
+#cd host  # needed for builds from github tarball
 mkdir build
 cd build
 # enable uhd components explicitly so we get build error when unsatisfied

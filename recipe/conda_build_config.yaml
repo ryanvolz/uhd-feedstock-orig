@@ -1,6 +1,6 @@
 c_compiler:  # [win or osx]
   - vs2015  # [win]
-  - clang  # [osx]
+  - gcc  # [osx]
 cxx_compiler:  # [win or osx]
   - vs2015  # [win]
-  - clang  # [osx]
+  - gxx  # [osx]

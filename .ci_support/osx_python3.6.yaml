@@ -5,9 +5,9 @@ boost:
 boost_cpp:
 - 1.67.0
 c_compiler:
-- clang
+- gcc
 cxx_compiler:
-- clang
+- gxx
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:

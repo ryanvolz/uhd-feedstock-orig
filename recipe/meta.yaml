@@ -51,9 +51,9 @@ test:
         "uhd_config_info",
         "uhd_find_devices",
         "uhd_image_loader",
-        "uhd_images_downloader",  # [not win]
+        "uhd_images_downloader",  # [linux]
         "uhd_usrp_probe",
-        "usrp2_card_burner",  # [not win]
+        "usrp2_card_burner",  # [linux]
     ] %}
     {% for each_cmd in uhd_cmds %}
     - command -v {{ each_cmd }}  # [unix]

@@ -5,9 +5,9 @@ boost:
 boost_cpp:
 - 1.67.0
 c_compiler:
-- toolchain_c
+- clang
 cxx_compiler:
-- toolchain_cxx
+- clang
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
@@ -22,7 +22,7 @@ pin_run_as_build:
   ncurses:
     max_pin: x.x
   python:
-    min_pin: x.x
     max_pin: x.x
+    min_pin: x.x
 python:
 - '3.6'

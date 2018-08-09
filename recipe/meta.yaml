@@ -1,5 +1,5 @@
-{% set version = "3.12.0.0" %}
-{% set sha256 = "a4ae40c2e3e6c51941fc59eab2c8131fd03fa837459e287b340c88cf2c9848ed" %}
+{% set version = "3.13.0.1" %}
+{% set sha256 = "ee5475e7ffbb14441b323cc2fc73950cde2326fd00772dab62efa677f27a97bf" %}
 {% set build_number = "0" %}  # use for ease of rebasing other branches
 
 package:
@@ -12,7 +12,6 @@ source:
 
 build:
   number: {{ build_number }}
-  skip: True  # [not py36] to avoid building pointlessly against multiple python
   run_exports:
     - {{ pin_subpackage('uhd', min_pin='x.x.x', max_pin='x.x.x') }}
 
@@ -29,6 +28,7 @@ requirements:
     - libusb >=1
     - mako >=0.5.0
     - ncurses  # [not win]
+    - numpy
     - pkg-config  # [not win]
     - python
     - requests
@@ -36,9 +36,10 @@ requirements:
   run:
     - boost
     - boost-cpp
-    # python >=2.7 is required, but requests pulls it in and leaving it out
-    # means no automatic pinning (can be different version from build)
-    #- python
+    # windows requires vs2015+ to build and therefore can't build against py2k
+    # so then we don't enable the UHD python library and don't have these deps
+    - {{ pin_compatible('numpy') }}  # [(not win) or py3k]
+    - python  # [(not win) or py3k]
     - requests
 
 test:
@@ -65,6 +66,9 @@ test:
     - test -f $PREFIX/lib/lib{{ uhd_lib }}${SHLIB_EXT}  # [unix]
     - conda inspect linkages -p $PREFIX uhd  # [not win]
     - conda inspect objects -p $PREFIX uhd  # [osx]
+
+  import:
+    - uhd  # [(not win) or py3k]
 
 about:
   home: http://github.com/EttusResearch/uhd

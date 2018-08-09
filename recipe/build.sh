@@ -11,11 +11,14 @@ cd build
 #   DOXYGEN/MANUAL because we don't need docs in the conda package
 #   E100/E300 are for embedded devices and are disable by default
 #   GPSD needs gpsd
+#   LIBERIO needs liberio
 cmake \
     -DBOOST_ROOT=$PREFIX \
+    -DBoost_PYTHON_LIBRARY_RELEASE:FILEPATH="$PREFIX/lib/libboost_python${PY_VER//./}$SHLIB_EXT" \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DLIB_SUFFIX="" \
+    -DPYTHON_EXECUTABLE=$PYTHON \
     -DENABLE_B100=ON \
     -DENABLE_B200=ON \
     -DENABLE_C_API=ON \
@@ -30,6 +33,9 @@ cmake \
     -DENABLE_MPMD=ON \
     -DENABLE_OCTOCLOCK=ON \
     -DENABLE_N230=ON \
+    -DENABLE_PYTHON_API=ON \
+    -DENABLE_PYTHON3=$PY3K \
+    -DENABLE_RFNOC=ON \
     -DENABLE_TESTS=ON \
     -DENABLE_UTILS=ON \
     -DENABLE_USB=ON \

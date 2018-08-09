@@ -11,6 +11,7 @@ cd build
 ::   DOXYGEN/MANUAL because we don't need docs in the conda package
 ::   E100/E300 are for embedded devices and are disable by default
 ::   GPSD needs gpsd
+::   LIBERIO needs liberio
 ::   MAN_PAGES because they can't be enabled for Windows
 cmake -G "NMake Makefiles JOM" ^
     -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
@@ -19,7 +20,8 @@ cmake -G "NMake Makefiles JOM" ^
     -DCMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP:BOOL=ON ^
     -DPYTHON_EXECUTABLE:PATH="%PYTHON%" ^
     -DBOOST_ALL_DYN_LINK:BOOL=ON ^
-    -DLIBUSB_INCLUDE_DIRS:PATH="%LIBRARY_INC%"\libusb-1.0 ^
+    -DBoost_PYTHON_LIBRARY_RELEASE:FILEPATH="%LIBRARY_LIB%\libboost_python%PY_VER:.=%.lib" ^
+    -DLIBUSB_INCLUDE_DIRS:PATH="%LIBRARY_INC%\libusb-1.0" ^
     -DENABLE_B100=ON ^
     -DENABLE_B200=ON ^
     -DENABLE_C_API=ON ^
@@ -34,6 +36,10 @@ cmake -G "NMake Makefiles JOM" ^
     -DENABLE_MPMD=ON ^
     -DENABLE_OCTOCLOCK=ON ^
     -DENABLE_N230=ON ^
+:: windows requires vs2015+ to build and therefore can't build against py2k
+    -DENABLE_PYTHON_API:BOOL="%PY3K%" ^
+    -DENABLE_PYTHON3:BOOL="%PY3K%" ^
+    -DENABLE_RFNOC=ON ^
     -DENABLE_TESTS=ON ^
     -DENABLE_UTILS=ON ^
     -DENABLE_USB=ON ^

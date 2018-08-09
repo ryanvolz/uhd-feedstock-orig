@@ -3,22 +3,22 @@ boost:
 boost_cpp:
 - 1.67.0
 c_compiler:
-- vs2015
+- toolchain_c
 cxx_compiler:
-- vs2015
+- toolchain_cxx
+ncurses:
+- '6.1'
 numpy:
-- '1.11'
+- '1.9'
 pin_run_as_build:
   boost:
     max_pin: x.x.x
   boost-cpp:
     max_pin: x.x.x
+  ncurses:
+    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- '3.6'
-zip_keys:
-- - python
-  - c_compiler
-  - cxx_compiler
+- '2.7'

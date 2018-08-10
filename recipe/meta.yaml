@@ -4,7 +4,9 @@
 
 package:
   name: uhd
-  version: {{ version }}
+  version: {{ version }}  # [not win]
+  version: {{ version }}+1pyapi  # [win and uhd_python_api]
+  version: {{ version }}+0nopyapi  # [win and not uhd_python_api]
 
 source:
   url: https://github.com/EttusResearch/uhd/archive/v{{ version }}.tar.gz
@@ -14,6 +16,8 @@ build:
   number: {{ build_number }}
   run_exports:
     - {{ pin_subpackage('uhd', min_pin='x.x.x', max_pin='x.x.x') }}
+  script:  # [not uhd_python_api]
+    - call %RECIPE_DIR%\bld_nopython.bat  # [not uhd_python_api]
 
 requirements:
   build:
@@ -38,8 +42,8 @@ requirements:
     - boost-cpp
     # windows requires vs2015+ to build and therefore can't build against py2k
     # so then we don't enable the UHD python library and don't have these deps
-    - {{ pin_compatible('numpy') }}  # [(not win) or py3k]
-    - python  # [(not win) or py3k]
+    - {{ pin_compatible('numpy') }}  # [uhd_python_api]
+    - python  # [uhd_python_api]
     - requests
 
 test:

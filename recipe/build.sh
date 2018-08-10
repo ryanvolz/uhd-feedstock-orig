@@ -3,6 +3,13 @@
 # make builds with gcc>=5 compatible with conda-forge, currently using gcc<5
 CXXFLAGS="${CXXFLAGS} -D_GLIBCXX_USE_CXX11_ABI=0"
 
+if [ "$PY3K" = "1" ]; then
+    export BOOST_PYTHON_COMPONENT="PYTHON3"
+else
+    export BOOST_PYTHON_COMPONENT="PYTHON"
+fi
+export BOOST_PYTHON_LIBPATH="$PREFIX/lib/libboost_python${PY_VER//./}$SHLIB_EXT"
+
 cd host  # needed for builds from github tarball
 mkdir build
 cd build
@@ -14,7 +21,7 @@ cd build
 #   LIBERIO needs liberio
 cmake \
     -DBOOST_ROOT=$PREFIX \
-    -DBoost_PYTHON_LIBRARY_RELEASE:FILEPATH="$PREFIX/lib/libboost_python${PY_VER//./}$SHLIB_EXT" \
+    -DBoost_${BOOST_PYTHON_COMPONENT}_LIBRARY_RELEASE:FILEPATH=$BOOST_PYTHON_LIBPATH \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DLIB_SUFFIX="" \

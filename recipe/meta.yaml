@@ -36,6 +36,7 @@ requirements:
     - pkg-config  # [not win]
     - python
     - requests
+    - setuptools  # [uhd_python_api]
 
   run:
     - boost

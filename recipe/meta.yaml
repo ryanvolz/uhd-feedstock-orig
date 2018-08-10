@@ -11,6 +11,8 @@ package:
 source:
   url: https://github.com/EttusResearch/uhd/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-Fix-build-RPATH-remaining-on-installed-libpyuhd.patch
 
 build:
   number: {{ build_number }}

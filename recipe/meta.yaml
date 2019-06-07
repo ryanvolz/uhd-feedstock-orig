@@ -1,5 +1,5 @@
-{% set version = "3.13.0.1" %}
-{% set sha256 = "ee5475e7ffbb14441b323cc2fc73950cde2326fd00772dab62efa677f27a97bf" %}
+{% set version = "3.14.0.0" %}
+{% set sha256 = "612bcc4e857e126c2e1ace98618816209665b20c4136c9e987c67511661715df" %}
 {% set build_number = "0" %}  # use for ease of rebasing other branches
 
 package:
@@ -20,6 +20,7 @@ build:
     - {{ pin_subpackage('uhd', min_pin='x.x.x', max_pin='x.x.x') }}
   script:  # [not uhd_python_api]
     - call %RECIPE_DIR%\bld_nopython.bat  # [not uhd_python_api]
+    - call %RECIPE_DIR%\bld.bat
 
 requirements:
   build:

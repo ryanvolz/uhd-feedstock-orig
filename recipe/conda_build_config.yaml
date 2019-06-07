@@ -10,7 +10,7 @@ uhd_python_api:
   - True
 
 python:  # [win]
-  - 3.6  # [win]
+  - 3.7  # [win]
 
 vc:  # [win]
   - 14  # [win]

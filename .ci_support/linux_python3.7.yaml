@@ -7,9 +7,9 @@ c_compiler:
 c_compiler_version:
 - '7'
 channel_sources:
-- conda-forge,defaults
+- conda-forge,ryanvolz,defaults
 channel_targets:
-- conda-forge main
+- ryanvolz main
 cxx_compiler:
 - gxx
 cxx_compiler_version:

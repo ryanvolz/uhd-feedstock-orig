@@ -14,3 +14,9 @@ python:  # [win]
 
 vc:  # [win]
   - 14  # [win]
+
+channel_sources:
+  - conda-forge,ryanvolz,defaults
+
+channel_targets:
+  - ryanvolz main

@@ -5,9 +5,9 @@ boost_cpp:
 c_compiler:
 - vs2015
 channel_sources:
-- conda-forge,defaults
+- conda-forge,ryanvolz,defaults
 channel_targets:
-- conda-forge main
+- ryanvolz main
 cxx_compiler:
 - vs2015
 numpy:

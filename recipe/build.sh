@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# make builds with gcc>=5 compatible with conda-forge, currently using gcc<5
-CXXFLAGS="${CXXFLAGS} -D_GLIBCXX_USE_CXX11_ABI=0"
-
 if [ "$PY3K" = "1" ]; then
     export BOOST_PYTHON_COMPONENT="PYTHON3"
 else
@@ -21,6 +18,7 @@ cd build
 #   LIBERIO needs liberio
 cmake \
     -DBOOST_ROOT=$PREFIX \
+    -DBoost_NO_BOOST_CMAKE=ON \
     -DBoost_${BOOST_PYTHON_COMPONENT}_LIBRARY_RELEASE:FILEPATH=$BOOST_PYTHON_LIBPATH \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \

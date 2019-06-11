@@ -13,6 +13,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - 0001-Fix-build-RPATH-remaining-on-installed-libpyuhd.patch
+    - 0002-Fix-snprintf-redeclared-as_snprintf.patch
 
 build:
   number: {{ build_number }}

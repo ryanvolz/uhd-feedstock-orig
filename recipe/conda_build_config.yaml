@@ -13,7 +13,7 @@ python:  # [win]
   - 3.7  # [win]
 
 vc:  # [win]
-  - 14  # [win]
+  - 14.1  # [win]
 
 channel_sources:
   - conda-forge,ryanvolz,defaults

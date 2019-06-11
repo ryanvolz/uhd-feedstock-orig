@@ -1,9 +1,9 @@
 c_compiler:  # [osx or win]
   - clang  # [osx]
-  - vs2015  # [win]
+  - vs2017  # [win]
 cxx_compiler:  # [osx or win]
   - clangxx  # [osx]
-  - vs2015  # [win]
+  - vs2017  # [win]
 
 uhd_python_api:
   - False  # [win]

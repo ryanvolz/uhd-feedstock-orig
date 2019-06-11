@@ -19,28 +19,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>CircleCI</td>
-    <td>
-      <a href="https://circleci.com/gh/ryanvolz/uhd-feedstock">
-        <img alt="Linux" src="https://img.shields.io/circleci/project/github/ryanvolz/uhd-feedstock/master.svg?label=Linux">
-      </a>
-    </td>
-  </tr><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://travis-ci.org/ryanvolz/uhd-feedstock">
-        <img alt="macOS" src="https://img.shields.io/travis/ryanvolz/uhd-feedstock/master.svg?label=macOS">
-      </a>
-    </td>
-  </tr><tr>
-    <td>Appveyor</td>
-    <td>
-      <a href="https://ci.appveyor.com/project/ryanvolz/uhd-feedstock/branch/master">
-        <img alt="windows" src="https://img.shields.io/appveyor/ci/ryanvolz/uhd-feedstock/master.svg?label=Windows">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>

@@ -13,11 +13,11 @@ jobs:
       win_uhd_python_apiFalse:
         CONFIG: win_uhd_python_apiFalse
         CONDA_BLD_PATH: D:\\bld\\
-        UPLOAD_PACKAGES: False
+        UPLOAD_PACKAGES: True
       win_uhd_python_apiTrue:
         CONFIG: win_uhd_python_apiTrue
         CONDA_BLD_PATH: D:\\bld\\
-        UPLOAD_PACKAGES: False
+        UPLOAD_PACKAGES: True
   steps:
     # TODO: Fast finish on azure pipelines?
     - script: |

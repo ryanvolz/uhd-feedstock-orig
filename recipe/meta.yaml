@@ -25,7 +25,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - cmake >=2.8
+    - cmake >=3.5.1
     - jom  # [win]
 
   host:

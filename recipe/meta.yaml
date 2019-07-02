@@ -27,7 +27,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake >=3.5.1
-    - jom  # [win]
+    - ninja
 
   host:
     - boost

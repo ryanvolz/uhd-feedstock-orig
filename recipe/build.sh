@@ -16,7 +16,7 @@ cd build
 #   E100/E300 are for embedded devices and are disable by default
 #   GPSD needs gpsd
 #   LIBERIO needs liberio
-cmake \
+cmake -G "Ninja" \
     -DBOOST_ROOT=$PREFIX \
     -DBoost_NO_BOOST_CMAKE=ON \
     -DBoost_${BOOST_PYTHON_COMPONENT}_LIBRARY_RELEASE:FILEPATH=$BOOST_PYTHON_LIBPATH \
@@ -48,6 +48,6 @@ cmake \
     -DENABLE_USRP2=ON \
     -DENABLE_X300=ON \
     ..
-make -j${CPU_COUNT}
+cmake --build . -- -j${CPU_COUNT}
 ctest --output-on-failure
-make install
+cmake --build . --target install

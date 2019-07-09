@@ -10,12 +10,20 @@ jobs:
   strategy:
     maxParallel: 4
     matrix:
-      win_uhd_python_apiFalse:
-        CONFIG: win_uhd_python_apiFalse
+      win_c_compilervs2015cxx_compilervs2015python3.6uhd_python_apiFalse:
+        CONFIG: win_c_compilervs2015cxx_compilervs2015python3.6uhd_python_apiFalse
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
-      win_uhd_python_apiTrue:
-        CONFIG: win_uhd_python_apiTrue
+      win_c_compilervs2015cxx_compilervs2015python3.6uhd_python_apiTrue:
+        CONFIG: win_c_compilervs2015cxx_compilervs2015python3.6uhd_python_apiTrue
+        CONDA_BLD_PATH: D:\\bld\\
+        UPLOAD_PACKAGES: True
+      win_c_compilervs2015cxx_compilervs2015python3.7uhd_python_apiFalse:
+        CONFIG: win_c_compilervs2015cxx_compilervs2015python3.7uhd_python_apiFalse
+        CONDA_BLD_PATH: D:\\bld\\
+        UPLOAD_PACKAGES: True
+      win_c_compilervs2015cxx_compilervs2015python3.7uhd_python_apiTrue:
+        CONFIG: win_c_compilervs2015cxx_compilervs2015python3.7uhd_python_apiTrue
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
   steps:

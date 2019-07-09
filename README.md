@@ -75,17 +75,31 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_uhd_python_apiFalse</td>
+              <td>win_c_compilervs2015cxx_compilervs2015python3.6uhd_python_apiFalse</td>
               <td>
                 <a href="https://dev.azure.com/rvolz/feedstock-builds/_build/latest?definitionId=1&branchName=master">
-                  <img src="https://dev.azure.com/rvolz/feedstock-builds/_apis/build/status/uhd-feedstock?branchName=master&jobName=win&configuration=win_uhd_python_apiFalse" alt="variant">
+                  <img src="https://dev.azure.com/rvolz/feedstock-builds/_apis/build/status/uhd-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015python3.6uhd_python_apiFalse" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_uhd_python_apiTrue</td>
+              <td>win_c_compilervs2015cxx_compilervs2015python3.6uhd_python_apiTrue</td>
               <td>
                 <a href="https://dev.azure.com/rvolz/feedstock-builds/_build/latest?definitionId=1&branchName=master">
-                  <img src="https://dev.azure.com/rvolz/feedstock-builds/_apis/build/status/uhd-feedstock?branchName=master&jobName=win&configuration=win_uhd_python_apiTrue" alt="variant">
+                  <img src="https://dev.azure.com/rvolz/feedstock-builds/_apis/build/status/uhd-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015python3.6uhd_python_apiTrue" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_c_compilervs2015cxx_compilervs2015python3.7uhd_python_apiFalse</td>
+              <td>
+                <a href="https://dev.azure.com/rvolz/feedstock-builds/_build/latest?definitionId=1&branchName=master">
+                  <img src="https://dev.azure.com/rvolz/feedstock-builds/_apis/build/status/uhd-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015python3.7uhd_python_apiFalse" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_c_compilervs2015cxx_compilervs2015python3.7uhd_python_apiTrue</td>
+              <td>
+                <a href="https://dev.azure.com/rvolz/feedstock-builds/_build/latest?definitionId=1&branchName=master">
+                  <img src="https://dev.azure.com/rvolz/feedstock-builds/_apis/build/status/uhd-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015python3.7uhd_python_apiTrue" alt="variant">
                 </a>
               </td>
             </tr>

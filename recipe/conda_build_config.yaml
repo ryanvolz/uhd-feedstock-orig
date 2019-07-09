@@ -1,19 +1,6 @@
-c_compiler:  # [osx or win]
-  - clang  # [osx]
-  - vs2015  # [win]
-cxx_compiler:  # [osx or win]
-  - clangxx  # [osx]
-  - vs2015  # [win]
-
 uhd_python_api:
   - False  # [win]
   - True
-
-python:  # [win]
-  - 3.7  # [win]
-
-vc:  # [win]
-  - 14  # [win]
 
 channel_sources:
   - conda-forge,ryanvolz,defaults

@@ -21,6 +21,7 @@ build:
     - {{ pin_subpackage('uhd', min_pin='x.x.x', max_pin='x.x.x') }}
   script:  # [not uhd_python_api]
     - call %RECIPE_DIR%\bld_nopython.bat  # [not uhd_python_api]
+  skip: True  # [win and py2k]
 
 requirements:
   build:

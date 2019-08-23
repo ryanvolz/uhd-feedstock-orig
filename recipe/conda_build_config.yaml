@@ -1,6 +1,8 @@
 uhd_python_api:
   - False  # [win]
   - True
+CMAKE_GENERATOR:
+  - NMake Makefiles JOM  # [win]
 
 channel_sources:
   - conda-forge,ryanvolz,defaults

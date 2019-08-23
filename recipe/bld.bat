@@ -13,7 +13,7 @@ cd build
 ::   GPSD needs gpsd
 ::   LIBERIO needs liberio
 ::   MAN_PAGES because they can't be enabled for Windows
-cmake -G "Ninja" ^
+cmake ^
     -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
     -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
     -DCMAKE_BUILD_TYPE:STRING=Release ^

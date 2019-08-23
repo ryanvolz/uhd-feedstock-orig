@@ -28,7 +28,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake >=3.5.1
-    - ninja
+    - jom  # [win]
    # libudev needed to link against libusb on linux
     - {{ cdt('libudev') }}  # [linux]
 

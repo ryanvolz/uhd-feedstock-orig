@@ -47,6 +47,7 @@ requirements:
   run:
     - boost
     - boost-cpp
+    - ncurses  # [not win]
     # windows requires vs2015+ to build and therefore can't build against py2k
     # so then we don't enable the UHD python library and don't have these deps
     - {{ pin_compatible('numpy') }}  # [uhd_python_api]

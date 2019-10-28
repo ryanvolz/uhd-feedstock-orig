@@ -75,8 +75,10 @@ test:
     # verify libraries
     {% set uhd_lib = "uhd" %}
     - test -f $PREFIX/lib/lib{{ uhd_lib }}${SHLIB_EXT}  # [unix]
-    - conda inspect linkages -p $PREFIX uhd  # [not win]
-    - conda inspect objects -p $PREFIX uhd  # [osx]
+
+    # run select commands
+    - uhd_config_info --print-all
+    - uhd_find_devices
 
   import:
     - uhd  # [(not win) or py3k]

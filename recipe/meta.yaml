@@ -78,7 +78,7 @@ test:
 
     # run select commands
     - uhd_config_info --print-all
-    - uhd_find_devices
+    - uhd_find_devices || (($? < 128))  # [unix]
 
   import:
     - uhd  # [(not win) or py3k]

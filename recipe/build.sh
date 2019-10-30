@@ -14,6 +14,7 @@ cd build
 # the following are disabled:
 #   DOXYGEN/MANUAL because we don't need docs in the conda package
 #   DPDK needs dpdk
+#   E300 build fails on CI
 #   GPSD needs gpsd
 #   LIBERIO needs liberio
 cmake \
@@ -30,7 +31,7 @@ cmake \
     -DENABLE_C_API=ON \
     -DENABLE_DOXYGEN=OFF \
     -DENABLE_DPDK=OFF \
-    -DENABLE_E300=ON \
+    -DENABLE_E300=OFF \
     -DENABLE_E320=ON \
     -DENABLE_EXAMPLES=ON \
     -DENABLE_GPSD=OFF \

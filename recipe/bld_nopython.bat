@@ -9,11 +9,11 @@ cd build
 :: enable uhd components explicitly so we get build error when unsatisfied
 :: the following are disabled:
 ::   DOXYGEN/MANUAL because we don't need docs in the conda package
-::   E100/E300 are for embedded devices and are disable by default
+::   DPDK needs dpdk
 ::   GPSD needs gpsd
 ::   LIBERIO needs liberio
 ::   MAN_PAGES because they can't be enabled for Windows
-cmake ^
+cmake -G "NMake Makefiles JOM" ^
     -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
     -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
     -DCMAKE_BUILD_TYPE:STRING=Release ^
@@ -26,7 +26,9 @@ cmake ^
     -DENABLE_B200=ON ^
     -DENABLE_C_API=ON ^
     -DENABLE_DOXYGEN=OFF ^
-    -DENABLE_E300=OFF ^
+    -DENABLE_DPDK=OFF ^
+    -DENABLE_E300=ON ^
+    -DENABLE_E320=ON ^
     -DENABLE_EXAMPLES=ON ^
     -DENABLE_GPSD=OFF ^
     -DENABLE_LIBERIO=OFF ^

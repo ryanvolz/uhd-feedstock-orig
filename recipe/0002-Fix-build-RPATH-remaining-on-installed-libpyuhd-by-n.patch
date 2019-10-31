@@ -1,0 +1,27 @@
+From accf8592023f44f19fbb293dd185a1c610d3e422 Mon Sep 17 00:00:00 2001
+From: Ryan Volz <rvolz@mit.edu>
+Date: Fri, 10 Aug 2018 18:07:17 -0400
+Subject: [PATCH 2/2] Fix build RPATH remaining on installed libpyuhd by not
+ setting it.
+
+---
+ host/python/CMakeLists.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/host/python/CMakeLists.txt b/host/python/CMakeLists.txt
+index c84ce3d01..3627fc571 100644
+--- a/host/python/CMakeLists.txt
++++ b/host/python/CMakeLists.txt
+@@ -33,6 +33,9 @@ target_link_libraries(pyuhd ${BOOST_PYTHON_LIBRARY} ${Boost_LIBRARIES} uhd)
+ if(APPLE)
+     target_link_options(pyuhd PRIVATE "LINKER:-undefined,dynamic_lookup")
+ endif(APPLE)
++# skip setting pyuhd's RPATH because it is installed as a python data file so
++# the build RPATH would never be overwritten by an install RPATH
++set_target_properties(pyuhd PROPERTIES SKIP_BUILD_RPATH ON BUILD_WITH_INSTALL_RPATH OFF)
+ # Copy pyuhd library to the staging directory
+ if(WIN32)
+     set(PYUHD_LIBRARY_NAME libpyuhd.pyd)
+-- 
+2.20.1
+

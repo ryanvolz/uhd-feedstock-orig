@@ -1,6 +1,6 @@
 {% set version = "3.14.1.1" %}
 {% set sha256 = "8cbcb22d12374ceb2859689b1d68d9a5fa6bd5bd82407f66952863d5547d27d0" %}
-{% set build_number = "1" %}  # use for ease of rebasing other branches
+{% set build_number = "2" %}  # use for ease of rebasing other branches
 
 package:
   name: uhd
@@ -15,6 +15,7 @@ source:
     - 0001-Fix-build-RPATH-remaining-on-installed-libpyuhd.patch
     - 0002-Fix-snprintf-redeclared-as_snprintf.patch
     - 0003-lib-utils-Don-t-use-hard-coded-path-constants.patch
+    - 0004-python-change-CMake-variable-for-library-ext.patch
 
 build:
   number: {{ build_number }}
@@ -81,8 +82,8 @@ test:
     - uhd_config_info --print-all
     - uhd_find_devices || (($? < 128))  # [unix]
 
-  import:
-    - uhd  # [(not win) or py3k]
+  imports:
+    - uhd  # [uhd_python_api]
 
 about:
   home: http://github.com/EttusResearch/uhd

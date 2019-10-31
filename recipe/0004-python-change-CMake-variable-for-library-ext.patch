@@ -1,0 +1,30 @@
+From f258d72e2558e471c6345b286cf12dfd0d7a206a Mon Sep 17 00:00:00 2001
+From: Brent Stapleton <brent.stapleton@ettus.com>
+Date: Wed, 6 Mar 2019 09:55:55 -0800
+Subject: [PATCH] python: change CMake variable for library ext
+
+Changing the CMake variable used in determining the extension of the
+Python API library for better cross-platform support.
+
+Specifically, `CMAKE_SHARED_MODULE_SUFFIX` corresponds to .so for *nix
+and MacOS, which is the extension Python expects.
+---
+ host/python/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/host/python/CMakeLists.txt b/host/python/CMakeLists.txt
+index 12325beb3..7c06c0923 100644
+--- a/host/python/CMakeLists.txt
++++ b/host/python/CMakeLists.txt
+@@ -42,7 +42,7 @@ target_link_libraries(pyuhd ${Boost_LIBRARIES} ${PYTHON_LIBRARY} uhd)
+ if(WIN32)
+     set(PYUHD_LIBRARY_NAME libpyuhd.pyd)
+ else()
+-    set(PYUHD_LIBRARY_NAME libpyuhd${CMAKE_SHARED_LIBRARY_SUFFIX})
++    set(PYUHD_LIBRARY_NAME libpyuhd${CMAKE_SHARED_MODULE_SUFFIX})
+ endif(WIN32)
+ 
+ add_custom_command(TARGET pyuhd
+-- 
+2.20.1
+

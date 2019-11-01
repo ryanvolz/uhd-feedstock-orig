@@ -1,4 +1,4 @@
-From f36305dfee1f259280c8af7fd8510e1691be4195 Mon Sep 17 00:00:00 2001
+From 76518b90264258851c2729dfd453437c5a13b3ae Mon Sep 17 00:00:00 2001
 From: Ryan Volz <rvolz@mit.edu>
 Date: Thu, 31 Oct 2019 17:02:07 -0400
 Subject: [PATCH 3/4] python: Do not link against python lib for building an
@@ -17,7 +17,7 @@ See https://blog.tim-smith.us/2015/09/python-extension-modules-os-x
  1 file changed, 9 insertions(+), 1 deletion(-)
 
 diff --git a/host/python/CMakeLists.txt b/host/python/CMakeLists.txt
-index fe81c010f..be0bf9e61 100644
+index 55de1e606..3de0017f9 100644
 --- a/host/python/CMakeLists.txt
 +++ b/host/python/CMakeLists.txt
 @@ -34,7 +34,15 @@ target_include_directories(pyuhd PUBLIC
@@ -36,7 +36,7 @@ index fe81c010f..be0bf9e61 100644
 +endif(WIN32)
  # Copy pyuhd library to the staging directory
  add_custom_command(TARGET pyuhd
-     POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:pyuhd> ${CMAKE_CURRENT_BINARY_DIR}/uhd/)
+     POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:pyuhd> ${CMAKE_CURRENT_BINARY_DIR}/uhd/$<TARGET_FILE_NAME:pyuhd>)
 -- 
 2.20.1
 

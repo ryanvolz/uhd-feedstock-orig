@@ -1,4 +1,4 @@
-From 47c961c56089dd7a5216d0dd437eae3c873c3c68 Mon Sep 17 00:00:00 2001
+From 6cfeb0619454fa0acfefa8e438f1107ce143de24 Mon Sep 17 00:00:00 2001
 From: Ryan Volz <rvolz@mit.edu>
 Date: Fri, 10 Aug 2018 18:07:17 -0400
 Subject: [PATCH 4/4] Fix build RPATH remaining on installed libpyuhd by not
@@ -9,7 +9,7 @@ Subject: [PATCH 4/4] Fix build RPATH remaining on installed libpyuhd by not
  1 file changed, 3 insertions(+)
 
 diff --git a/host/python/CMakeLists.txt b/host/python/CMakeLists.txt
-index be0bf9e61..3be1b10b0 100644
+index 3de0017f9..9e6faf1b1 100644
 --- a/host/python/CMakeLists.txt
 +++ b/host/python/CMakeLists.txt
 @@ -43,6 +43,9 @@ else()
@@ -21,7 +21,7 @@ index be0bf9e61..3be1b10b0 100644
 +set_target_properties(pyuhd PROPERTIES SKIP_BUILD_RPATH ON BUILD_WITH_INSTALL_RPATH OFF)
  # Copy pyuhd library to the staging directory
  add_custom_command(TARGET pyuhd
-     POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:pyuhd> ${CMAKE_CURRENT_BINARY_DIR}/uhd/)
+     POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:pyuhd> ${CMAKE_CURRENT_BINARY_DIR}/uhd/$<TARGET_FILE_NAME:pyuhd>)
 -- 
 2.20.1
 

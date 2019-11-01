@@ -1,4 +1,4 @@
-From d665158cc02d497f6024def2b675842f68cea799 Mon Sep 17 00:00:00 2001
+From c81af5ebe7ff1988f5175ec8085d372d2ddc0876 Mon Sep 17 00:00:00 2001
 From: Ryan Volz <rvolz@mit.edu>
 Date: Fri, 1 Nov 2019 10:32:24 -0400
 Subject: [PATCH 2/4] python: Fix internal library name (incl. suffix) to match
@@ -12,7 +12,7 @@ the correct name.
  1 file changed, 7 insertions(+), 7 deletions(-)
 
 diff --git a/host/python/CMakeLists.txt b/host/python/CMakeLists.txt
-index a19391d83..55de1e606 100644
+index a19391d83..d45303a01 100644
 --- a/host/python/CMakeLists.txt
 +++ b/host/python/CMakeLists.txt
 @@ -23,6 +23,12 @@ execute_process(
@@ -21,9 +21,9 @@ index a19391d83..55de1e606 100644
  add_library(pyuhd SHARED pyuhd.cpp)
 +# python expects extension modules with a particular suffix
 +if(WIN32)
-+    set_target_properties(pyuhd PROPERTIES SUFFIX ".pyd")
++    set_target_properties(pyuhd PROPERTIES PREFIX "lib" SUFFIX ".pyd")
 +else()
-+    set_target_properties(pyuhd PROPERTIES SUFFIX ".so")
++    set_target_properties(pyuhd PROPERTIES PREFIX "lib" SUFFIX ".so")
 +endif(WIN32)
  target_include_directories(pyuhd PUBLIC
      ${PYTHON_NUMPY_INCLUDE_DIR}
